@@ -1,7 +1,7 @@
 ```markdown
 # Bot Detector
 
-Bot Detector is a simple React application that allows users to determine if they are interacting with a bot. The application displays a question "Are you a Bot???" along with options to answer "Yes" or "No". Upon clicking "No", the application generates funny phrases suggesting the possibility of the user being a bot.
+Bot Detector is a simple React application that allows users to determine if they are interacting with a bot. The application displays the question "Are you a Bot???" along with options to answer "Yes" or "No". Upon clicking "No", the application generates funny phrases suggesting the possibility of the user being a bot.
 
 ## Installation
 
@@ -50,16 +50,6 @@ t3nsor
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
-
-Feel free to replace "Your Name" and "[your-username]" with your actual name and GitHub username, respectively. Let me know if there's anything else you'd like to adjust!
-
-
-
-
-
-
-
-
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
