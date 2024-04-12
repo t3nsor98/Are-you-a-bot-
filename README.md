@@ -44,7 +44,7 @@ Once the application is running, users can interact with the "Are you a Bot???" 
 
 ## Contributors
 
-- [Your Name](https://github.com/your-username)
+t3nsor
 
 ## License
 
