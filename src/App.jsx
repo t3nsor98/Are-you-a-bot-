@@ -1,41 +1,44 @@
 import { useState, useEffect, useRef } from "react";
 import babyYoda from "./assets/baby-yoda.gif";
-// import beaver from "./assets/beaver.gif";
-// import bebyBubu from "./assets/beby-bubu.gif";
-// import berrincheHimouto from "./assets/berrinche-himouto-umaru-chan.gif";
-// import bubuBubuDudu from "./assets/bubu-bubu-dudu.gif";
-// import captainPikachu from "./assets/captain-pikachu-pokemon.gif";
-// import catwait from "./assets/catwait-cat-wagging-tail.gif";
-// import chipmunkViralhog from "./assets/chipmunk-viralhog.gif";
-// import chipwrecked from "./assets/chipwrecked-brittany-chipette.gif";
-// import cuteAww from "./assets/cute-aww.gif";
-// import cutePinguin from "./assets/cute-pinguin-hello-mrbrotstange-penguin-madagaskar-lol-bruh.gif";
-// import dancingCat from "./assets/dancing-cat-dance.gif";
-// import eatingCats from "./assets/eating-cats-talking.gif";
-// import greeting from "./assets/greeting-talking.gif";
-// import hamsterArayasan from "./assets/hamster-ayasan.gif";
-// import hamsterDriving from "./assets/hamster-hamster-driving.gif";
-// import hamsterMeme from "./assets/hamster-hamster-meme.gif";
-// import hamsterbow from "./assets/hamsterbow-sad-hamster.gif";
-// import himouto from "./assets/himouto-umaru-chan-anime.gif";
-// import littleCat from "./assets/little-cat-walking.gif";
-// import marmot from "./assets/marmot.gif";
-// import nerdHamster from "./assets/nerd-hamster.gif";
-// import nezukoSlayer from "./assets/nezuko-demon-slayer.gif";
-// import nezukoRunning from "./assets/nezuko-running.gif";
-// import pokemon from "./assets/pokemon.gif";
-// import rageRagecat from "./assets/rage-ragecat.gif";
-// import sealBaby from "./assets/seal-baby.gif";
-// import smallCat from "./assets/small-cat-cat-dance.gif";
-// import smolCat from "./assets/smol-cat.gif";
-// import umaruDancing from "./assets/umaru-dancing.gif";
-// import weDoSmoling from "./assets/we-do-a-little-smoling.gif";
+import beaver from "./assets/beaver.gif";
+import bebyBubu from "./assets/beby-bubu.gif";
+import berrincheHimouto from "./assets/berrinche-himouto-umaru-chan.gif";
+import bubuBubuDudu from "./assets/bubu-bubu-dudu.gif";
+import captainPikachu from "./assets/captain-pikachu-pokemon.gif";
+import catwait from "./assets/catwait-cat-wagging-tail.gif";
+import chipmunkViralhog from "./assets/chipmunk-viralhog.gif";
+import chipwrecked from "./assets/chipwrecked-brittany-chipette.gif";
+import cuteAww from "./assets/cute-aww.gif";
+import cutePinguin from "./assets/cute-pinguin-hello-mrbrotstange-penguin-madagaskar-lol-bruh.gif";
+import dancingCat from "./assets/dancing-cat-dance.gif";
+import eatingCats from "./assets/eating-cats.gif";
+import greeting from "./assets/greeting-talking.gif";
+import hamsterArayasan from "./assets/hamster-ayasan.gif";
+import hamsterDriving from "./assets/hamster-hamster-driving.gif";
+import hamsterMeme from "./assets/hamster-hamster-meme.gif";
+import hamsterbow from "./assets/hamsterbow-sad-hamster.gif";
+import himouto from "./assets/himouto-umaru-chan-anime.gif";
+import littleCat from "./assets/little-cat-walking.gif";
+import marmot from "./assets/marmot.gif";
+import nerdHamster from "./assets/nerd-hamster.gif";
+import nezukoSlayer from "./assets/nezuko-demon-slayer.gif";
+import nezukoRunning from "./assets/nezuko-running.gif";
+import pokemon from "./assets/pokemon.gif";
+import rageRagecat from "./assets/rage-ragecat.gif";
+import sealBaby from "./assets/seal-baby.gif";
+import smallCat from "./assets/small-cat-cat-dance.gif";
+import smolCat from "./assets/smol-cat.gif";
+import umaruDancing from "./assets/umaru-dancing.gif";
+import weDoSmoling from "./assets/we-do-a-little-smoling.gif";
+import yo from "/yo.gif";
 
 export default function App() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
   const [currentGif, setCurrentGif] = useState(smolCat); // Initialize with a GIF
   const yesButtonRef = useRef(null);
+  const noSoundRef = useRef(null);
+  const yesSoundRef = useRef(null);
 
   const gifs = [
     babyYoda,
@@ -73,6 +76,16 @@ export default function App() {
 
   const handleNoClick = () => {
     setNoCount(noCount + 1);
+    if (noSoundRef.current) {
+      noSoundRef.current.play();
+    }
+  };
+
+  const handleYesClick = () => {
+    setYesPressed(true);
+    if (yesSoundRef.current) {
+      yesSoundRef.current.play();
+    }
   };
 
   const getNoButtonText = () => {
@@ -80,27 +93,27 @@ export default function App() {
       "Are you smol?",
       "Are you sure you're not smol?",
       "Maybe a little smol?",
-      "C'mon, admit it, you're smol",
+      "C'mon, admit it, you're smol??",
       "Smol but mighty?",
-      "I bet you're smol",
-      "Definitely smol",
+      "I bet you're smol??",
+      "Definitely smol??",
       "Smol, smol, smol!",
       "Tiny and adorable?",
       "Pocket-sized perhaps?",
       "Fun-sized?",
-      "It's okay to be smol",
+      "It's okay to be smol?",
       "Embrace your smolness!",
-      "Smol is the new big",
-      "Please, just say you're smol",
-      "I know you're smol",
-      "Super smol",
-      "Ultra smol",
-      "Mega smol",
-      "Giga smol",
+      "Smol is the new big?",
+      "Please, just say you're smol?",
+      "I know you're smol?",
+      "Super smol?",
+      "Ultra smol?",
+      "Mega smol?",
+      "Giga smol?",
       "Teeny tiny smol",
-      "Itsy bitsy smol",
-      "Wee little smol",
-      "Supercalifragilisticexpialidociously smol",
+      "Itsy bitsy smol?",
+      "Wee little smol?",
+      "Supercalifragilisticexpialidociously smol?",
       "U kinda look like a hamster though, are you sure you're not smol?",
       "Maybe a smol chipmunk?",
       "As smol as a beaver?",
@@ -115,7 +128,7 @@ export default function App() {
       "Like a tiny kitten?",
       "Smol like a ladybug?",
       "Are you a smol bean?",
-      "Maybe a smol gremlin?",
+      "Maybe a smol racoon?",
     ];
 
     // Shuffle the phrases array randomly
@@ -148,10 +161,13 @@ export default function App() {
       <h1 className="text-5xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 mb-12">
         Smol Detector
       </h1>
+      {/* audios */}
+      <audio ref={noSoundRef} src="/no_sound.mp3" />
+      <audio ref={yesSoundRef} src="/yes_sound.mp3" />
       {yesPressed ? (
         <>
           <img
-            src={babyYoda} // Use an imported GIF here
+            src={yo} // Use an imported GIF here
             alt="You are smol"
             className="w-48 h-48 rounded-full border-4 border-pink-400 object-cover shadow-lg animate-pulse"
           />
@@ -172,13 +188,13 @@ export default function App() {
             alt="Are you smol???"
           />
           <h1 className="text-4xl sm:text-5xl font-extrabold text-yellow-500 text-center mb-8">
-            Are you smol???
+            {noCount === 0 ? "Are you smol???" : getNoButtonText()}
           </h1>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <button
               ref={yesButtonRef}
               className={`rounded-full bg-green-500 px-6 py-3 text-lg sm:text-xl font-bold text-white hover:bg-green-700 shadow-md transition-all duration-300 ease-in-out active:scale-95`}
-              onClick={() => setYesPressed(true)}
+              onClick={handleYesClick}
             >
               Yes
             </button>
@@ -186,7 +202,7 @@ export default function App() {
               onClick={handleNoClick}
               className="rounded-full bg-red-500 px-6 py-3 text-lg sm:text-xl font-bold text-white hover:bg-red-700 shadow-md transition-all duration-300 ease-in-out active:scale-95"
             >
-              {noCount === 0 ? "No" : getNoButtonText()}
+              No
             </button>
           </div>
         </>
